@@ -5,5 +5,5 @@ description: Designed and modelled a 4-piston engine using SolidWorks using bott
 skills: 
 - SolidWorks 2026
 - CAD
-main-image: /project.webp
+main-image: /pistonfull.png
 ---
