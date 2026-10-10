@@ -13,7 +13,7 @@
       {% else %}
           {% assign page_url_without_index = page.url | remove: 'index' | remove: '.html' %}
           <img 
-              src="{{ '/assets/images/project-images/' | append: image_name | relative_url }}" 
+              src="{{ '/assets/images/project-pictures/' | append: image_name | relative_url }}" 
               alt="{{image_name}}"
               loading="lazy"
               onerror="this.onerror=null;this.src=this.src.replace('.webp','.png');"
