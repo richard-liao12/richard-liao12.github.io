@@ -1,37 +1,62 @@
-<!-- _includes/nav.html -->
-<nav>
+<!-- _includes/navbar.html -->
+<nav aria-label="Main">
     <div class="left">
-        <a href="/">{{site.name}}</a>
+        <a href="{{ '/' | relative_url }}">{{ site.name }}</a>
     </div>
 
     <!-- Desktop Menu -->
     <div class="right desktop-nav">
-        <a href="/">
+        <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>
             <span>Home</span>
         </a>
-        <a href="/projects/">
+        <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects' %} aria-current="page"{% endif %}>
             <span>Projects</span>
         </a>
-        <a href="{{site.resume-url}}" target="_blank" rel="noopener noreferrer">
+        <a href="{{ site.resume-url }}" target="_blank" rel="noopener noreferrer">
             <span>Resume</span>
         </a>
     </div>
 
     <!-- Mobile Menu Button -->
-    <button class="menu-toggle" aria-label="Toggle menu">
-        <i class="fa fa-bars fa-2x"></i>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <i class="fa fa-bars"></i>
     </button>
 
     <!-- Mobile Menu -->
-    <div class="mobile-nav">
-        <a href="/">
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="{{ '/' | relative_url }}">
             <span>Home</span>
         </a>
-        <a href="/projects/">
+        <a href="{{ '/projects/' | relative_url }}">
             <span>Projects</span>
         </a>
-        <a href="{{site.resume-url}}" target="_blank" rel="noopener noreferrer">
+        <a href="{{ site.resume-url }}" target="_blank" rel="noopener noreferrer">
             <span>Resume</span>
         </a>
     </div>
 </nav>
+
+<script>
+    (function () {
+        var button = document.querySelector('.menu-toggle');
+        var menu = document.querySelector('.mobile-nav');
+        if (!button || !menu) return;
+
+        function setOpen(open) {
+            menu.classList.toggle('open', open);
+            button.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        button.addEventListener('click', function () {
+            setOpen(!menu.classList.contains('open'));
+        });
+
+        menu.addEventListener('click', function (e) {
+            if (e.target.closest('a')) setOpen(false);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') setOpen(false);
+        });
+    })();
+</script>
