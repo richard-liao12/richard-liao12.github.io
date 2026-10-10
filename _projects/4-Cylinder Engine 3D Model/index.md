@@ -7,4 +7,4 @@ skills:
 - CAD
 main-image: /pistonfull.png
 ---
-{% include image-gallery.html images="/pistonfull.png, /pistonexploded.png" height="400" %}
+{% include image-gallery.html images="/assets/images/pistonfull.png,/assets/images/pistonexploded.png" height="400" %}
