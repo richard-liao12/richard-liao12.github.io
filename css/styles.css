@@ -111,26 +111,49 @@ nav .right {
 }
 
 nav .right a {
+    position: relative;
     color: var(--muted-color);
     font-size: 16px;
     font-weight: 500;
     padding: 4px 0;
-    border-bottom: 2px solid transparent;
 }
 
-nav .right a:hover { color: var(--text-color); }
-
-nav .right a[aria-current="page"] {
-    color: var(--text-color);
-    border-bottom-color: var(--link-color);
+/* Hover / current-page indicator: a teal underline */
+nav .right a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: var(--link-color);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    nav .right a::after { transition: transform 0.2s ease; }
+}
+
+nav .right a:hover,
+nav .right a:focus-visible { color: var(--text-color); }
+
+nav .right a:hover::after,
+nav .right a:focus-visible::after,
+nav .right a[aria-current="page"]::after { transform: scaleX(1); }
+
+nav .right a[aria-current="page"] { color: var(--text-color); }
+
+/* Resume is a button, so it keeps its own hover (fill) instead of an underline */
 nav .right a:last-child {
     color: var(--text-color);
     padding: 6px 16px;
     border: 1.5px solid var(--text-color);
     border-radius: 8px;
 }
+
+nav .right a:last-child::after { display: none; }
 
 nav .right a:last-child:hover {
     color: var(--background-color);
