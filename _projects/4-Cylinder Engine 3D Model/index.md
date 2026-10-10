@@ -6,5 +6,5 @@ skills:
 - SolidWorks 2026
 - CAD
 main-image: /pistonfull.png
-{% include image-gallery.html images="pistonexploded.png" height="400" %}
 ---
+{% include image-gallery.html images="pistonexploded.png" height="400" %}
