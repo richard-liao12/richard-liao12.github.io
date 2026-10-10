@@ -797,7 +797,7 @@ code {
         box-shadow: 0 12px 32px -16px rgba(13, 27, 42, 0.25);
     }
 
-    .mobile-nav.open { display: flex; }
+    .mobile-nav.active { display: flex; }
 
     .mobile-nav a {
         padding: 12px 14px;
