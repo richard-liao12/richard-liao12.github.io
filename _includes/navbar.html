@@ -36,27 +36,3 @@
     </div>
 </nav>
 
-<script>
-    (function () {
-        var button = document.querySelector('.menu-toggle');
-        var menu = document.querySelector('.mobile-nav');
-        if (!button || !menu) return;
-
-        function setOpen(open) {
-            menu.classList.toggle('open', open);
-            button.setAttribute('aria-expanded', open ? 'true' : 'false');
-        }
-
-        button.addEventListener('click', function () {
-            setOpen(!menu.classList.contains('open'));
-        });
-
-        menu.addEventListener('click', function (e) {
-            if (e.target.closest('a')) setOpen(false);
-        });
-
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') setOpen(false);
-        });
-    })();
-</script>
