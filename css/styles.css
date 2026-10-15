@@ -724,12 +724,12 @@ code {
 }
 
 .image-gallery img {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     height: var(--gallery-height, 300px);
     width: auto;
     max-width: 100%;
     margin: 0;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     border: 1px solid var(--border-color);
 }
