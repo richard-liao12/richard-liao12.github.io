@@ -7,5 +7,5 @@ skills:
 - CAD
 main-image: /onboardingFullAssem.png
 ---
-{% include image-gallery.html images="onboardingStrikerBolt&Mount.png, onboardingStrikerBoltMount.png, onboardingLatchMount.png, onboardingNoDoorAssem.png, onboardingNoDoorAssemAlt.png" height="400" %}
+{% include image-gallery.html images="onboardingFullAssem.png", "onboardingStrikerBolt&Mount.png, onboardingStrikerBoltMount.png, onboardingLatchMount.png, onboardingNoDoorAssem.png, onboardingNoDoorAssemAlt.png" height="400" %}
 
