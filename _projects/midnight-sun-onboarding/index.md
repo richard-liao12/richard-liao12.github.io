@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 4-Cylinder Engine 3D Model
-description: Designed and modelled a 4-piston engine using SolidWorks using bottom-up assembly technique. All parts were modelled individually before being fully assembled using various mating techniques in a way that allowed for realistic engine movement and animation.
+title: Custom Door Latch and Striker Bolt Mounting Solution
+description: Designed and modelled custom door latch and striker mounts in SolidWorks based on packaging constraints, optimizing geometry for rapid installation and FDM 3D Printing. Integrated standard fasteners and a flanged heat-set threaded insert in reverse orientation into the assembly, preventing insert pull-out under tensile loads. This was an onboarding project for the Midnight Sun Solar Car Racing Team, in which I had to create a custom mount solution based on given constraints. 
 skills: 
 - SolidWorks 2026
 - CAD
